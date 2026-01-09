@@ -1,7 +1,7 @@
 --[[
 
 =====================================================================
-==================== READ THIS BEFORE CONTINUING ====================
+==================== 続きを見る前にこれを読んでください ====================
 =====================================================================
 ========                                    .-----.          ========
 ========         .----------------------.   | === |          ========
@@ -13,204 +13,204 @@
 ========         ||:Tutor              ||   |:::::|          ========
 ========         |'-..................-'|   |____o|          ========
 ========         `"")----------------(""`   ___________      ========
-========        /::::::::::|  |::::::::::\  \ no mouse \     ========
-========       /:::========|  |==hjkl==:::\  \ required \    ========
+========        /::::::::::|  |::::::::::\  \ マウスは   \     ========
+========       /:::========|  |==hjkl==:::\  \ 不要です   \    ========
 ========      '""""""""""""'  '""""""""""""'  '""""""""""'   ========
 ========                                                     ========
 =====================================================================
 =====================================================================
 
-What is Kickstart?
+Kickstart とは？
 
-  Kickstart.nvim is *not* a distribution.
+  Kickstart.nvim はディストリビューションでは「ありません」。
 
-  Kickstart.nvim is a starting point for your own configuration.
-    The goal is that you can read every line of code, top-to-bottom, understand
-    what your configuration is doing, and modify it to suit your needs.
+  Kickstart.nvim は、あなた自身の設定の出発点となるものです。
+    目標は、コードを最初から最後まで読み、設定が何をしているかを理解し、
+    自分のニーズに合わせて変更できるようにすることです。
 
-    Once you've done that, you can start exploring, configuring and tinkering to
-    make Neovim your own! That might mean leaving Kickstart just the way it is for a while
-    or immediately breaking it into modular pieces. It's up to you!
+    それができたら、Neovim を自分だけのものにするために、探索や設定、
+    いじくり回すことを始められます！ しばらくの間 Kickstart をそのまま使うのもよし、
+    すぐにモジュール化して分解するのもよし。あなた次第です！
 
-    If you don't know anything about Lua, I recommend taking some time to read through
-    a guide. One possible example which will only take 10-15 minutes:
+    もし Lua について何も知らない場合は、時間を取ってガイドを読むことをお勧めします。
+    10〜15分で読める例として以下があります:
       - https://learnxinyminutes.com/docs/lua/
 
-    After understanding a bit more about Lua, you can use `:help lua-guide` as a
-    reference for how Neovim integrates Lua.
+    Lua について少し理解したら、Neovim がどのように Lua を統合しているかのリファレンスとして
+    `:help lua-guide` を使用できます。
     - :help lua-guide
-    - (or HTML version): https://neovim.io/doc/user/lua-guide.html
+    - (または HTML 版): https://neovim.io/doc/user/lua-guide.html
 
-Kickstart Guide:
+Kickstart ガイド:
 
-  TODO: The very first thing you should do is to run the command `:Tutor` in Neovim.
+  TODO: 最初にすべきことは、Neovim で `:Tutor` コマンドを実行することです。
 
-    If you don't know what this means, type the following:
-      - <escape key>
+    どういう意味かわからない場合は、以下のように入力してください:
+      - <Esc キー>
       - :
       - Tutor
-      - <enter key>
+      - <Enter キー>
 
-    (If you already know the Neovim basics, you can skip this step.)
+    (すでに Neovim の基本を知っている場合は、このステップをスキップできます。)
 
-  Once you've completed that, you can continue working through **AND READING** the rest
-  of the kickstart init.lua.
+  それが完了したら、残りの kickstart init.lua を読み進めながら作業を続けてください。
+  「読み進める」ことが重要です。
 
-  Next, run AND READ `:help`.
-    This will open up a help window with some basic information
-    about reading, navigating and searching the builtin help documentation.
+  次に、`:help` を実行して「読んで」ください。
+    これにより、組み込みのヘルプドキュメントの読み方、ナビゲーション、
+    検索に関する基本情報が表示されたヘルプウィンドウが開きます。
 
-    This should be the first place you go to look when you're stuck or confused
-    with something. It's one of my favorite Neovim features.
+    何かに行き詰まったり混乱したりしたときは、まずここを見るべきです。
+    これは私のお気に入りの Neovim 機能の一つです。
 
-    MOST IMPORTANTLY, we provide a keymap "<space>sh" to [s]earch the [h]elp documentation,
-    which is very useful when you're not exactly sure of what you're looking for.
+    最も重要なこととして、ヘルプドキュメントを検索するためのキーマップ "<space>sh" ([s]earch [h]elp)
+    を提供しています。これは、何を探しているのか正確にわからない場合に非常に便利です。
 
-  I have left several `:help X` comments throughout the init.lua
-    These are hints about where to find more information about the relevant settings,
-    plugins or Neovim features used in Kickstart.
+  init.lua 全体にいくつかの `:help X` コメントを残しています。
+    これらは、Kickstart で使用されている関連設定、プラグイン、
+    または Neovim 機能に関する詳細情報を見つけるためのヒントです。
 
-   NOTE: Look for lines like this
+   注意: このような行を探してください
 
-    Throughout the file. These are for you, the reader, to help you understand what is happening.
-    Feel free to delete them once you know what you're doing, but they should serve as a guide
-    for when you are first encountering a few different constructs in your Neovim config.
+    ファイル全体にあります。これらは読者であるあなたのために、何が起きているかを理解するのを助けるためのものです。
+    何をしているか理解したら自由に削除して構いませんが、Neovim 設定のいくつかの異なる構造に
+    初めて遭遇したときのガイドとして役立つはずです。
 
-If you experience any errors while trying to install kickstart, run `:checkhealth` for more info.
+Kickstart のインストール中にエラーが発生した場合は、`:checkhealth` を実行して詳細を確認してください。
 
-I hope you enjoy your Neovim journey,
+あなたの Neovim の旅が楽しいものになりますように、
 - TJ
 
-P.S. You can delete this when you're done too. It's your config now! :)
+追伸: 完了したらこれも削除して構いません。これはもうあなたの設定ですから！ :)
 --]]
 
--- Set <space> as the leader key
--- See `:help mapleader`
---  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
+-- <space> をリーダーキーに設定
+-- `:help mapleader` を参照
+--  注意: プラグインが読み込まれる前に設定する必要があります（そうしないと間違ったリーダーが使用されます）
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
--- Set to true if you have a Nerd Font installed and selected in the terminal
+-- Nerd Font をインストールし、ターミナルで選択している場合は true に設定してください
 vim.g.have_nerd_font = false
 
--- [[ Setting options ]]
--- See `:help vim.o`
--- NOTE: You can change these options as you wish!
---  For more options, you can see `:help option-list`
+-- [[ オプションの設定 ]]
+-- `:help vim.o` を参照
+-- 注意: これらのオプションは自由に変更できます！
+--  その他のオプションについては、`:help option-list` を参照してください
 
--- Make line numbers default
+-- 行番号をデフォルトで表示
 vim.o.number = true
--- You can also add relative line numbers, to help with jumping.
---  Experiment for yourself to see if you like it!
+-- ジャンプを助けるために相対行番号を追加することもできます。
+--  気に入るかどうか自分で試してみてください！
 -- vim.o.relativenumber = true
 
--- Enable mouse mode, can be useful for resizing splits for example!
+-- マウスモードを有効にする。分割のサイズ変更などに便利です！
 vim.o.mouse = 'a'
 
--- Don't show the mode, since it's already in the status line
+-- モードを表示しない（ステータスラインにすでに表示されているため）
 vim.o.showmode = false
 
--- Sync clipboard between OS and Neovim.
---  Schedule the setting after `UiEnter` because it can increase startup-time.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
+-- OS と Neovim のクリップボードを同期します。
+--  起動時間が長くなる可能性があるため、`UiEnter` の後に設定をスケジュールします。
+--  OS のクリップボードを独立させたい場合は、このオプションを削除してください。
+--  `:help 'clipboard'` を参照
 vim.schedule(function()
   vim.o.clipboard = 'unnamedplus'
 end)
 
--- Enable break indent
+-- ブレイクインデントを有効にする
 vim.o.breakindent = true
 
--- Save undo history
+-- アンドゥ履歴を保存する
 vim.o.undofile = true
 
--- Case-insensitive searching UNLESS \C or one or more capital letters in the search term
+-- 検索語に \C や大文字が含まれていない限り、大文字と小文字を区別せずに検索します
 vim.o.ignorecase = true
 vim.o.smartcase = true
 
--- Keep signcolumn on by default
+-- サインカラムをデフォルトでオンにする
 vim.o.signcolumn = 'yes'
 
--- Decrease update time
+-- 更新時間を短縮
 vim.o.updatetime = 250
 
--- Decrease mapped sequence wait time
+-- マッピングされたシーケンスの待機時間を短縮
 vim.o.timeoutlen = 300
 
--- Configure how new splits should be opened
+-- 新しい分割ウィンドウの開き方を設定
 vim.o.splitright = true
 vim.o.splitbelow = true
 
--- Sets how neovim will display certain whitespace characters in the editor.
---  See `:help 'list'`
---  and `:help 'listchars'`
+-- Neovim がエディタ内で特定の空白文字をどのように表示するかを設定します。
+--  `:help 'list'`
+--  および `:help 'listchars'` を参照
 --
---  Notice listchars is set using `vim.opt` instead of `vim.o`.
---  It is very similar to `vim.o` but offers an interface for conveniently interacting with tables.
---   See `:help lua-options`
---   and `:help lua-options-guide`
+--  listchars は vim.o ではなく vim.opt を使用して設定されていることに注意してください。
+--  vim.o と非常によく似ていますが、テーブルを便利に操作するためのインターフェースを提供します。
+--   `:help lua-options`
+--   および `:help lua-options-guide` を参照
 vim.o.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
--- Preview substitutions live, as you type!
+-- 入力中に置換をライブプレビュー！
 vim.o.inccommand = 'split'
 
--- Show which line your cursor is on
+-- カーソルがある行を表示
 vim.o.cursorline = true
 
--- Minimal number of screen lines to keep above and below the cursor.
+-- カーソルの上下に保持する最小スクリーン行数。
 vim.o.scrolloff = 10
 
--- if performing an operation that would fail due to unsaved changes in the buffer (like `:q`),
--- instead raise a dialog asking if you wish to save the current file(s)
--- See `:help 'confirm'`
+-- バッファ内の未保存の変更が原因で失敗する操作（`:q` など）を実行した場合、
+-- 代わりに現在のファイルを保存するかどうかを尋ねるダイアログを表示します
+-- `:help 'confirm'` を参照
 vim.o.confirm = true
 
--- [[ Basic Keymaps ]]
---  See `:help vim.keymap.set()`
+-- [[ 基本的なキーマップ ]]
+--  `:help vim.keymap.set()` を参照
 
--- Clear highlights on search when pressing <Esc> in normal mode
---  See `:help hlsearch`
+-- ノーマルモードで <Esc> を押したときに検索のハイライトを消去する
+--  `:help hlsearch` を参照
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
--- Diagnostic keymaps
+-- 診断（Diagnostic）のキーマップ
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
--- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
--- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
--- is not what someone will guess without a bit more experience.
+-- 組み込みターミナルのターミナルモードを、もう少し発見しやすいショートカットで終了します。
+-- 通常は <C-\><C-n> を押す必要がありますが、これは
+-- 少し経験がないと推測できないものです。
 --
--- NOTE: This won't work in all terminal emulators/tmux/etc. Try your own mapping
--- or just use <C-\><C-n> to exit terminal mode
+-- 注意: これはすべてのターミナルエミュレータ/tmux/etc で動作するわけではありません。独自のマッピングを試すか、
+-- 単に <C-\><C-n> を使用してターミナルモードを終了してください
 vim.keymap.set('t', '<Esc><Esc>', '<C-\\><C-n>', { desc = 'Exit terminal mode' })
 
--- TIP: Disable arrow keys in normal mode
+-- ヒント: ノーマルモードで矢印キーを無効にする
 -- vim.keymap.set('n', '<left>', '<cmd>echo "Use h to move!!"<CR>')
 -- vim.keymap.set('n', '<right>', '<cmd>echo "Use l to move!!"<CR>')
 -- vim.keymap.set('n', '<up>', '<cmd>echo "Use k to move!!"<CR>')
 -- vim.keymap.set('n', '<down>', '<cmd>echo "Use j to move!!"<CR>')
 
--- Keybinds to make split navigation easier.
---  Use CTRL+<hjkl> to switch between windows
+-- 分割ウィンドウのナビゲーションを簡単にするキーバインド。
+--  CTRL+<hjkl> を使用してウィンドウを切り替えます
 --
---  See `:help wincmd` for a list of all window commands
+--  すべてのウィンドウコマンドのリストについては `:help wincmd` を参照してください
 vim.keymap.set('n', '<C-h>', '<C-w><C-h>', { desc = 'Move focus to the left window' })
 vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right window' })
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- NOTE: Some terminals have colliding keymaps or are not able to send distinct keycodes
+-- 注意: 一部のターミナルではキーマップが衝突したり、異なるキーコードを送信できなかったりします
 -- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
 -- vim.keymap.set("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
 -- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
 -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
 
--- [[ Basic Autocommands ]]
---  See `:help lua-guide-autocommands`
+-- [[ 基本的な自動コマンド ]]
+--  `:help lua-guide-autocommands` を参照
 
--- Highlight when yanking (copying) text
---  Try it with `yap` in normal mode
---  See `:help vim.hl.on_yank()`
+-- テキストをヤンク（コピー）したときにハイライトする
+--  ノーマルモードで `yap` を試してみてください
+--  `:help vim.hl.on_yank()` を参照
 vim.api.nvim_create_autocmd('TextYankPost', {
   desc = 'Highlight when yanking (copying) text',
   group = vim.api.nvim_create_augroup('kickstart-highlight-yank', { clear = true }),
@@ -219,12 +219,12 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- [[ Install `lazy.nvim` plugin manager ]]
---    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
+-- [[ `lazy.nvim` プラグインマネージャーのインストール ]]
+--    詳細については `:help lazy.nvim.txt` または https://github.com/folke/lazy.nvim を参照してください
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
   local lazyrepo = 'https://github.com/folke/lazy.nvim.git'
-  local out = vim.fn.system { 'git', 'clone', '--filter=blob:none', '--branch=stable', lazyrepo, lazypath }
+  local out = vim.fn.system { 'git', 'clone', '--filter=blob:none', lazyrepo, lazypath }
   if vim.v.shell_error ~= 0 then
     error('Error cloning lazy.nvim:\n' .. out)
   end
@@ -234,30 +234,30 @@ end
 local rtp = vim.opt.rtp
 rtp:prepend(lazypath)
 
--- [[ Configure and install plugins ]]
+-- [[ プラグインの設定とインストール ]]
 --
---  To check the current status of your plugins, run
+--  プラグインの現在のステータスを確認するには、以下を実行します
 --    :Lazy
 --
---  You can press `?` in this menu for help. Use `:q` to close the window
+--  このメニューで `?` を押すとヘルプが表示されます。ウィンドウを閉じるには `:q` を使用します
 --
---  To update plugins you can run
+--  プラグインを更新するには、以下を実行します
 --    :Lazy update
 --
--- NOTE: Here is where you install your plugins.
+-- 注意: ここでプラグインをインストールします。
 require('lazy').setup({
-  -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
-  'NMAC427/guess-indent.nvim', -- Detect tabstop and shiftwidth automatically
+  -- 注意: プラグインはリンク（または GitHub リポジトリの場合: 'owner/repo' リンク）で追加できます。
+  'NMAC427/guess-indent.nvim', -- tabstop と shiftwidth を自動的に検出
 
-  -- NOTE: Plugins can also be added by using a table,
-  -- with the first argument being the link and the following
-  -- keys can be used to configure plugin behavior/loading/etc.
+  -- 注意: プラグインはテーブルを使用して追加することもできます。
+  -- 最初の引数をリンクとし、続くキーを使用して
+  -- プラグインの動作/読み込み/などを設定できます。
   --
-  -- Use `opts = {}` to automatically pass options to a plugin's `setup()` function, forcing the plugin to be loaded.
+  -- `opts = {}` を使用すると、オプションが自動的にプラグインの `setup()` 関数に渡され、プラグインが強制的に読み込まれます。
   --
 
-  -- Alternatively, use `config = function() ... end` for full control over the configuration.
-  -- If you prefer to call `setup` explicitly, use:
+  -- あるいは、設定を完全に制御するには `config = function() ... end` を使用します。
+  -- `setup` を明示的に呼び出したい場合は、次のようにします:
   --    {
   --        'lewis6991/gitsigns.nvim',
   --        config = function()
@@ -267,11 +267,11 @@ require('lazy').setup({
   --        end,
   --    }
   --
-  -- Here is a more advanced example where we pass configuration
-  -- options to `gitsigns.nvim`.
+  -- ここでは、設定オプションを `gitsigns.nvim` に渡す
+  -- より高度な例を示します。
   --
-  -- See `:help gitsigns` to understand what the configuration keys do
-  { -- Adds git related signs to the gutter, as well as utilities for managing changes
+  -- 設定キーの機能については `:help gitsigns` を参照してください
+  { -- Git 関連のサインをガターに追加し、変更を管理するユーティリティも提供します
     'lewis6991/gitsigns.nvim',
     opts = {
       signs = {
@@ -284,32 +284,32 @@ require('lazy').setup({
     },
   },
 
-  -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
+  -- 注意: プラグインが読み込まれたときに Lua コードを実行するように設定することもできます。
   --
-  -- This is often very useful to both group configuration, as well as handle
-  -- lazy loading plugins that don't need to be loaded immediately at startup.
+  -- これは、設定をグループ化したり、
+  -- 起動時にすぐに読み込む必要のないプラグインの遅延読み込みを処理したりするのに非常に便利です。
   --
-  -- For example, in the following configuration, we use:
+  -- たとえば、以下の設定では次を使用しています:
   --  event = 'VimEnter'
   --
-  -- which loads which-key before all the UI elements are loaded. Events can be
-  -- normal autocommands events (`:help autocmd-events`).
+  -- これにより、すべての UI 要素が読み込まれる前に which-key が読み込まれます。イベントは
+  -- 通常の自動コマンドイベント (`:help autocmd-events`) を使用できます。
   --
-  -- Then, because we use the `opts` key (recommended), the configuration runs
-  -- after the plugin has been loaded as `require(MODULE).setup(opts)`.
+  -- そして、`opts` キー（推奨）を使用しているため、プラグインが読み込まれた後に
+  -- `require(MODULE).setup(opts)` として設定が実行されます。
 
-  { -- Useful plugin to show you pending keybinds.
+  { -- 保留中のキーバインドを表示する便利なプラグイン。
     'folke/which-key.nvim',
     event = 'VimEnter', -- Sets the loading event to 'VimEnter'
     opts = {
-      -- delay between pressing a key and opening which-key (milliseconds)
-      -- this setting is independent of vim.o.timeoutlen
+      -- キーを押してから which-key が開くまでの遅延（ミリ秒）
+      -- この設定は vim.o.timeoutlen とは独立しています
       delay = 0,
       icons = {
-        -- set icon mappings to true if you have a Nerd Font
+        -- Nerd Font を持っている場合はアイコンマッピングを true に設定
         mappings = vim.g.have_nerd_font,
-        -- If you are using a Nerd Font: set icons.keys to an empty table which will use the
-        -- default which-key.nvim defined Nerd Font icons, otherwise define a string table
+        -- Nerd Font を使用している場合: icons.keys を空のテーブルに設定すると、
+        -- デフォルトの which-key.nvim 定義の Nerd Font アイコンが使用されます。それ以外の場合は文字列テーブルを定義します
         keys = vim.g.have_nerd_font and {} or {
           Up = '<Up> ',
           Down = '<Down> ',
@@ -342,7 +342,7 @@ require('lazy').setup({
         },
       },
 
-      -- Document existing key chains
+      -- 既存のキーチェーンをドキュメント化
       spec = {
         { '<leader>s', group = '[S]earch' },
         { '<leader>t', group = '[T]oggle' },
@@ -351,61 +351,61 @@ require('lazy').setup({
     },
   },
 
-  -- NOTE: Plugins can specify dependencies.
+  -- 注意: プラグインは依存関係を指定できます。
   --
-  -- The dependencies are proper plugin specifications as well - anything
-  -- you do for a plugin at the top level, you can do for a dependency.
+  -- 依存関係も適切なプラグイン仕様です。
+  -- トップレベルのプラグインに対して行うことはすべて、依存関係に対しても行うことができます。
   --
-  -- Use the `dependencies` key to specify the dependencies of a particular plugin
+  -- 特定のプラグインの依存関係を指定するには `dependencies` キーを使用します
 
-  { -- Fuzzy Finder (files, lsp, etc)
+  { -- ファジーファインダー (ファイル、LSP など)
     'nvim-telescope/telescope.nvim',
     event = 'VimEnter',
     dependencies = {
       'nvim-lua/plenary.nvim',
-      { -- If encountering errors, see telescope-fzf-native README for installation instructions
+      { -- エラーが発生した場合は、インストール手順について telescope-fzf-native の README を参照してください
         'nvim-telescope/telescope-fzf-native.nvim',
 
-        -- `build` is used to run some command when the plugin is installed/updated.
-        -- This is only run then, not every time Neovim starts up.
+        -- `build` は、プラグインのインストール/更新時にコマンドを実行するために使用されます。
+        -- これは Neovim が起動するたびではなく、その時だけ実行されます。
         build = 'make',
 
-        -- `cond` is a condition used to determine whether this plugin should be
-        -- installed and loaded.
+        -- `cond` は、このプラグインをインストールして読み込むかどうかを
+        -- 決定するために使用される条件です。
         cond = function()
           return vim.fn.executable 'make' == 1
         end,
       },
       { 'nvim-telescope/telescope-ui-select.nvim' },
 
-      -- Useful for getting pretty icons, but requires a Nerd Font.
+      -- きれいなアイコンを表示するのに便利ですが、Nerd Font が必要です。
       { 'nvim-tree/nvim-web-devicons', enabled = vim.g.have_nerd_font },
     },
     config = function()
-      -- Telescope is a fuzzy finder that comes with a lot of different things that
-      -- it can fuzzy find! It's more than just a "file finder", it can search
-      -- many different aspects of Neovim, your workspace, LSP, and more!
+      -- Telescope は、ファジー検索できる多くの機能を備えたファジーファインダーです！
+      -- 単なる「ファイル検索」ではなく、Neovim、ワークスペース、LSP などの
+      -- さまざまな側面を検索できます！
       --
-      -- The easiest way to use Telescope, is to start by doing something like:
+      -- Telescope を使う最も簡単な方法は、次のようなことから始めることです:
       --  :Telescope help_tags
       --
-      -- After running this command, a window will open up and you're able to
-      -- type in the prompt window. You'll see a list of `help_tags` options and
-      -- a corresponding preview of the help.
+      -- このコマンドを実行するとウィンドウが開き、
+      -- プロンプトウィンドウに入力できるようになります。`help_tags` オプションのリストと
+      -- 対応するヘルプのプレビューが表示されます。
       --
-      -- Two important keymaps to use while in Telescope are:
-      --  - Insert mode: <c-/>
-      --  - Normal mode: ?
+      -- Telescope 中に使用する2つの重要なキーマップは次のとおりです:
+      --  - インサートモード: <c-/>
+      --  - ノーマルモード: ?
       --
-      -- This opens a window that shows you all of the keymaps for the current
-      -- Telescope picker. This is really useful to discover what Telescope can
-      -- do as well as how to actually do it!
+      -- これにより、現在の Telescope ピッカーのすべてのキーマップを表示するウィンドウが開きます。
+      -- これは、Telescope で何ができるか、そして実際にどうやるかを発見するのに
+      -- 本当に役立ちます！
 
-      -- [[ Configure Telescope ]]
-      -- See `:help telescope` and `:help telescope.setup()`
+      -- [[ Telescope の設定 ]]
+      -- `:help telescope` および `:help telescope.setup()` を参照
       require('telescope').setup {
-        -- You can put your default mappings / updates / etc. in here
-        --  All the info you're looking for is in `:help telescope.setup()`
+        -- ここにデフォルトのマッピング / 更新 / などを配置できます
+        --  探しているすべての情報は `:help telescope.setup()` にあります
         --
         -- defaults = {
         --   mappings = {
@@ -420,11 +420,11 @@ require('lazy').setup({
         },
       }
 
-      -- Enable Telescope extensions if they are installed
+      -- インストールされている場合、Telescope 拡張機能を有効にする
       pcall(require('telescope').load_extension, 'fzf')
       pcall(require('telescope').load_extension, 'ui-select')
 
-      -- See `:help telescope.builtin`
+      -- `:help telescope.builtin` を参照
       local builtin = require 'telescope.builtin'
       vim.keymap.set('n', '<leader>sh', builtin.help_tags, { desc = '[S]earch [H]elp' })
       vim.keymap.set('n', '<leader>sk', builtin.keymaps, { desc = '[S]earch [K]eymaps' })
@@ -437,17 +437,17 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
 
-      -- Slightly advanced example of overriding default behavior and theme
+      -- デフォルトの動作とテーマを上書きする少し高度な例
       vim.keymap.set('n', '<leader>/', function()
-        -- You can pass additional configuration to Telescope to change the theme, layout, etc.
+        -- テーマ、レイアウトなどを変更するために、追加の設定を Telescope に渡すことができます。
         builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
           winblend = 10,
           previewer = false,
         })
       end, { desc = '[/] Fuzzily search in current buffer' })
 
-      -- It's also possible to pass additional configuration options.
-      --  See `:help telescope.builtin.live_grep()` for information about particular keys
+      -- 追加の設定オプションを渡すことも可能です。
+      --  特定のキーに関する情報については `:help telescope.builtin.live_grep()` を参照してください
       vim.keymap.set('n', '<leader>s/', function()
         builtin.live_grep {
           grep_open_files = true,
@@ -455,124 +455,124 @@ require('lazy').setup({
         }
       end, { desc = '[S]earch [/] in Open Files' })
 
-      -- Shortcut for searching your Neovim configuration files
+      -- Neovim 設定ファイルを検索するためのショートカット
       vim.keymap.set('n', '<leader>sn', function()
         builtin.find_files { cwd = vim.fn.stdpath 'config' }
       end, { desc = '[S]earch [N]eovim files' })
     end,
   },
 
-  -- LSP Plugins
+  -- LSP プラグイン
   {
-    -- `lazydev` configures Lua LSP for your Neovim config, runtime and plugins
-    -- used for completion, annotations and signatures of Neovim apis
+    -- `lazydev` は、Neovim の設定、ランタイム、プラグイン用の Lua LSP を設定します
+    -- Neovim API の補完、注釈、シグネチャに使用されます
     'folke/lazydev.nvim',
     ft = 'lua',
     opts = {
       library = {
-        -- Load luvit types when the `vim.uv` word is found
+        -- `vim.uv` という単語が見つかったときに luvit 型を読み込む
         { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
       },
     },
   },
   {
-    -- Main LSP Configuration
+    -- メインの LSP 設定
     'neovim/nvim-lspconfig',
     dependencies = {
-      -- Automatically install LSPs and related tools to stdpath for Neovim
-      -- Mason must be loaded before its dependents so we need to set it up here.
-      -- NOTE: `opts = {}` is the same as calling `require('mason').setup({})`
+      -- LSP と関連ツールを Neovim の stdpath に自動的にインストールする
+      -- Mason は依存関係の前に読み込む必要があるため、ここで設定する必要があります。
+      -- 注意: `opts = {}` は `require('mason').setup({})` を呼び出すのと同じです
       { 'mason-org/mason.nvim', opts = {} },
       'mason-org/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
 
-      -- Useful status updates for LSP.
+      -- LSP の便利なステータス更新。
       { 'j-hui/fidget.nvim', opts = {} },
 
-      -- Allows extra capabilities provided by blink.cmp
+      -- blink.cmp によって提供される追加機能を許可する
       'saghen/blink.cmp',
     },
     config = function()
-      -- Brief aside: **What is LSP?**
+      -- 少し余談: **LSP とは？**
       --
-      -- LSP is an initialism you've probably heard, but might not understand what it is.
+      -- LSP はおそらく聞いたことがある略語ですが、何なのか理解していないかもしれません。
       --
-      -- LSP stands for Language Server Protocol. It's a protocol that helps editors
-      -- and language tooling communicate in a standardized fashion.
+      -- LSP は Language Server Protocol の略です。これは、エディタと言語ツールが
+      -- 標準化された方法で通信するのを助けるプロトコルです。
       --
-      -- In general, you have a "server" which is some tool built to understand a particular
-      -- language (such as `gopls`, `lua_ls`, `rust_analyzer`, etc.). These Language Servers
-      -- (sometimes called LSP servers, but that's kind of like ATM Machine) are standalone
-      -- processes that communicate with some "client" - in this case, Neovim!
+      -- 一般的に、特定の言語（`gopls`、`lua_ls`、`rust_analyzer` など）を理解するために
+      -- 構築されたツールである「サーバー」があります。これらの言語サーバー
+      -- （LSP サーバーと呼ばれることもありますが、それは「ATM マシン」と言うようなものです）は、
+      -- 何らかの「クライアント」（この場合は Neovim！）と通信するスタンドアロンプロセスです。
       --
-      -- LSP provides Neovim with features like:
-      --  - Go to definition
-      --  - Find references
-      --  - Autocompletion
-      --  - Symbol Search
-      --  - and more!
+      -- LSP は Neovim に次のような機能を提供します:
+      --  - 定義へ移動
+      --  - 参照の検索
+      --  - 自動補完
+      --  - シンボル検索
+      --  - などなど！
       --
-      -- Thus, Language Servers are external tools that must be installed separately from
-      -- Neovim. This is where `mason` and related plugins come into play.
+      -- したがって、言語サーバーは Neovim とは別にインストールする必要がある外部ツールです。
+      -- ここで `mason` と関連プラグインが登場します。
       --
-      -- If you're wondering about lsp vs treesitter, you can check out the wonderfully
-      -- and elegantly composed help section, `:help lsp-vs-treesitter`
+      -- lsp と treesitter の違いについて疑問に思っている場合は、
+      -- 素晴らしくエレガントに構成されたヘルプセクション `:help lsp-vs-treesitter` を確認できます。
 
-      --  This function gets run when an LSP attaches to a particular buffer.
-      --    That is to say, every time a new file is opened that is associated with
-      --    an lsp (for example, opening `main.rs` is associated with `rust_analyzer`) this
-      --    function will be executed to configure the current buffer
+      --  この関数は、LSP が特定のバッファにアタッチされたときに実行されます。
+      --    つまり、lsp に関連付けられた新しいファイルが開かれるたびに
+      --    （たとえば、`main.rs` を開くと `rust_analyzer` に関連付けられます）、
+      --    この関数が実行され、現在のバッファが設定されます。
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
-          -- NOTE: Remember that Lua is a real programming language, and as such it is possible
-          -- to define small helper and utility functions so you don't have to repeat yourself.
+          -- 注意: Lua は本物のプログラミング言語であり、そのため
+          -- 小さなヘルパー関数やユーティリティ関数を定義して、繰り返しを避けることができます。
           --
-          -- In this case, we create a function that lets us more easily define mappings specific
-          -- for LSP related items. It sets the mode, buffer and description for us each time.
+          -- この場合、LSP 関連アイテムに固有のマッピングをより簡単に定義できる関数を作成します。
+          -- これは毎回モード、バッファ、説明を設定してくれます。
           local map = function(keys, func, desc, mode)
             mode = mode or 'n'
             vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = 'LSP: ' .. desc })
           end
 
-          -- Rename the variable under your cursor.
-          --  Most Language Servers support renaming across files, etc.
+          -- カーソル下の変数の名前を変更します。
+          --  ほとんどの言語サーバーは、ファイル間での名前変更などをサポートしています。
           map('grn', vim.lsp.buf.rename, '[R]e[n]ame')
 
-          -- Execute a code action, usually your cursor needs to be on top of an error
-          -- or a suggestion from your LSP for this to activate.
+          -- コードアクションを実行します。通常、これを有効にするには、
+          -- カーソルがエラーまたは LSP からの提案の上にある必要があります。
           map('gra', vim.lsp.buf.code_action, '[G]oto Code [A]ction', { 'n', 'x' })
 
-          -- Find references for the word under your cursor.
+          -- カーソル下の単語の参照を検索します。
           map('grr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
 
-          -- Jump to the implementation of the word under your cursor.
-          --  Useful when your language has ways of declaring types without an actual implementation.
+          -- カーソル下の単語の実装にジャンプします。
+          --  実際の装なしで型を宣言する方法がある言語で便利です。
           map('gri', require('telescope.builtin').lsp_implementations, '[G]oto [I]mplementation')
 
-          -- Jump to the definition of the word under your cursor.
-          --  This is where a variable was first declared, or where a function is defined, etc.
-          --  To jump back, press <C-t>.
+          -- カーソル下の単語の定義にジャンプします。
+          --  これは、変数が最初に宣言された場所、または関数が定義された場所などです。
+          --  戻るには <C-t> を押します。
           map('grd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
 
-          -- WARN: This is not Goto Definition, this is Goto Declaration.
-          --  For example, in C this would take you to the header.
+          -- 警告: これは定義へ移動ではなく、宣言へ移動です。
+          --  たとえば、C 言語ではヘッダーに移動します。
           map('grD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
 
-          -- Fuzzy find all the symbols in your current document.
-          --  Symbols are things like variables, functions, types, etc.
+          -- 現在のドキュメント内のすべてのシンボルをファジー検索します。
+          --  シンボルとは、変数、関数、型などのことです。
           map('gO', require('telescope.builtin').lsp_document_symbols, 'Open Document Symbols')
 
-          -- Fuzzy find all the symbols in your current workspace.
-          --  Similar to document symbols, except searches over your entire project.
+          -- 現在のワークスペース内のすべてのシンボルをファジー検索します。
+          --  ドキュメントシンボルと似ていますが、プロジェクト全体を検索します。
           map('gW', require('telescope.builtin').lsp_dynamic_workspace_symbols, 'Open Workspace Symbols')
 
-          -- Jump to the type of the word under your cursor.
-          --  Useful when you're not sure what type a variable is and you want to see
-          --  the definition of its *type*, not where it was *defined*.
+          -- カーソル下の単語の型にジャンプします。
+          --  変数の型がわからず、定義された場所ではなく
+          --  その *型* の定義を見たい場合に便利です。
           map('grt', require('telescope.builtin').lsp_type_definitions, '[G]oto [T]ype Definition')
 
-          -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
+          -- この関数は、neovim nightly (バージョン 0.11) と stable (バージョン 0.10) の違いを解決します
           ---@param client vim.lsp.Client
           ---@param method vim.lsp.protocol.Method
           ---@param bufnr? integer some lsp support methods only in specific files
@@ -585,11 +585,11 @@ require('lazy').setup({
             end
           end
 
-          -- The following two autocommands are used to highlight references of the
-          -- word under your cursor when your cursor rests there for a little while.
-          --    See `:help CursorHold` for information about when this is executed
+          -- 以下の2つの自動コマンドは、カーソルがしばらくそこにあるときに
+          -- カーソル下の単語の参照をハイライトするために使用されます。
+          --    これがいつ実行されるかについては `:help CursorHold` を参照してください
           --
-          -- When you move your cursor, the highlights will be cleared (the second autocommand).
+          -- カーソルを移動すると、ハイライトは消去されます（2番目の自動コマンド）。
           local client = vim.lsp.get_client_by_id(event.data.client_id)
           if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf) then
             local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
@@ -614,10 +614,10 @@ require('lazy').setup({
             })
           end
 
-          -- The following code creates a keymap to toggle inlay hints in your
-          -- code, if the language server you are using supports them
+          -- 以下のコードは、使用している言語サーバーがサポートしている場合、
+          -- コード内のインレイヒントを切り替えるキーマップを作成します。
           --
-          -- This may be unwanted, since they displace some of your code
+          -- コードの一部がずれるため、これは望ましくない場合があります。
           if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
             map('<leader>th', function()
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
@@ -626,8 +626,8 @@ require('lazy').setup({
         end,
       })
 
-      -- Diagnostic Config
-      -- See :help vim.diagnostic.Opts
+      -- 診断設定
+      -- :help vim.diagnostic.Opts を参照
       vim.diagnostic.config {
         severity_sort = true,
         float = { border = 'rounded', source = 'if_many' },
@@ -655,32 +655,32 @@ require('lazy').setup({
         },
       }
 
-      -- LSP servers and clients are able to communicate to each other what features they support.
-      --  By default, Neovim doesn't support everything that is in the LSP specification.
-      --  When you add blink.cmp, luasnip, etc. Neovim now has *more* capabilities.
-      --  So, we create new capabilities with blink.cmp, and then broadcast that to the servers.
+      -- LSP サーバーとクライアントは、サポートする機能を互いに通信できます。
+      --  デフォルトでは、Neovim は LSP 仕様にあるすべてをサポートしているわけではありません。
+      --  blink.cmp や luasnip などを追加すると、Neovim は *より多くの* 機能を持つようになります。
+      --  そこで、blink.cmp で新しい機能を作成し、それをサーバーにブロードキャストします。
       local capabilities = require('blink.cmp').get_lsp_capabilities()
 
-      -- Enable the following language servers
-      --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
+      -- 以下の言語サーバーを有効にする
+      --  ここで必要な LSP を自由に追加/削除してください。それらは自動的にインストールされます。
       --
-      --  Add any additional override configuration in the following tables. Available keys are:
-      --  - cmd (table): Override the default command used to start the server
-      --  - filetypes (table): Override the default list of associated filetypes for the server
-      --  - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
-      --  - settings (table): Override the default settings passed when initializing the server.
-      --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
+      --  以下のテーブルに追加の上書き設定を追加してください。利用可能なキーは次のとおりです:
+      --  - cmd (table): サーバーの起動に使用されるデフォルトコマンドを上書き
+      --  - filetypes (table): サーバーに関連付けられたファイルタイプのデフォルトリストを上書き
+      --  - capabilities (table): capabilities のフィールドを上書き。特定の LSP 機能を無効にするために使用できます。
+      --  - settings (table): サーバーの初期化時に渡されるデフォルト設定を上書き。
+      --        たとえば、`lua_ls` のオプションを確認するには、https://luals.github.io/wiki/settings/ を参照してください
       local servers = {
         -- clangd = {},
         -- gopls = {},
         -- pyright = {},
         -- rust_analyzer = {},
-        -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
+        -- ... など。事前に設定されたすべての LSP のリストについては `:help lspconfig-all` を参照してください
         --
-        -- Some languages (like typescript) have entire language plugins that can be useful:
+        -- 一部の言語（typescript など）には、便利な言語プラグイン全体があります:
         --    https://github.com/pmizio/typescript-tools.nvim
         --
-        -- But for many setups, the LSP (`ts_ls`) will work just fine
+        -- しかし、多くのセットアップでは、LSP (`ts_ls`) で十分機能します
         -- ts_ls = {},
         --
 
@@ -693,41 +693,41 @@ require('lazy').setup({
               completion = {
                 callSnippet = 'Replace',
               },
-              -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+              -- 以下を切り替えて、Lua_LS のうるさい `missing-fields` 警告を無視できます
               -- diagnostics = { disable = { 'missing-fields' } },
             },
           },
         },
       }
 
-      -- Ensure the servers and tools above are installed
+      -- 上記のサーバーとツールがインストールされていることを確認する
       --
-      -- To check the current status of installed tools and/or manually install
-      -- other tools, you can run
+      -- インストールされているツールの現在のステータスを確認したり、
+      -- 他のツールを手動でインストールしたりするには、以下を実行します
       --    :Mason
       --
-      -- You can press `g?` for help in this menu.
+      -- このメニューで `g?` を押すとヘルプが表示されます。
       --
-      -- `mason` had to be setup earlier: to configure its options see the
-      -- `dependencies` table for `nvim-lspconfig` above.
+      -- `mason` はもっと早く設定する必要がありました: オプションを設定するには
+      -- 上記の `nvim-lspconfig` の `dependencies` テーブルを参照してください。
       --
-      -- You can add other tools here that you want Mason to install
-      -- for you, so that they are available from within Neovim.
+      -- Mason にインストールさせたい他のツールをここに追加して、
+      -- Neovim 内から利用できるようにすることができます。
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        'stylua', -- Used to format Lua code
+        'stylua', -- Lua コードのフォーマットに使用
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
       require('mason-lspconfig').setup {
-        ensure_installed = {}, -- explicitly set to an empty table (Kickstart populates installs via mason-tool-installer)
+        ensure_installed = {}, -- 明示的に空のテーブルに設定（Kickstart は mason-tool-installer を介してインストールを行います）
         automatic_installation = false,
         handlers = {
           function(server_name)
             local server = servers[server_name] or {}
-            -- This handles overriding only values explicitly passed
-            -- by the server configuration above. Useful when disabling
-            -- certain features of an LSP (for example, turning off formatting for ts_ls)
+            -- これは、上記でサーバー設定によって明示的に渡された
+            -- 値のみの上書きを処理します。LSP の特定の機能を無効にする場合
+            -- （たとえば、ts_ls のフォーマットをオフにするなど）に便利です
             server.capabilities = vim.tbl_deep_extend('force', {}, capabilities, server.capabilities or {})
             require('lspconfig')[server_name].setup(server)
           end,
@@ -736,7 +736,7 @@ require('lazy').setup({
     end,
   },
 
-  { -- Autoformat
+  { -- 自動フォーマット
     'stevearc/conform.nvim',
     event = { 'BufWritePre' },
     cmd = { 'ConformInfo' },
@@ -753,9 +753,9 @@ require('lazy').setup({
     opts = {
       notify_on_error = false,
       format_on_save = function(bufnr)
-        -- Disable "format_on_save lsp_fallback" for languages that don't
-        -- have a well standardized coding style. You can add additional
-        -- languages here or re-enable it for the disabled ones.
+        -- 標準化されたコーディングスタイルを持たない言語に対して
+        -- "format_on_save lsp_fallback" を無効にします。
+        -- ここに追加の言語を追加したり、無効になっている言語を再度有効にしたりできます。
         local disable_filetypes = { c = true, cpp = true }
         if disable_filetypes[vim.bo[bufnr].filetype] then
           return nil
@@ -768,36 +768,36 @@ require('lazy').setup({
       end,
       formatters_by_ft = {
         lua = { 'stylua' },
-        -- Conform can also run multiple formatters sequentially
+        -- Conform は複数のフォーマッタを順番に実行することもできます
         -- python = { "isort", "black" },
         --
-        -- You can use 'stop_after_first' to run the first available formatter from the list
+        -- 'stop_after_first' を使用して、リストから最初に利用可能なフォーマッタを実行できます
         -- javascript = { "prettierd", "prettier", stop_after_first = true },
       },
     },
   },
 
-  { -- Autocompletion
+  { -- 自動補完
     'saghen/blink.cmp',
     event = 'VimEnter',
     version = '1.*',
     dependencies = {
-      -- Snippet Engine
+      -- スニペットエンジン
       {
         'L3MON4D3/LuaSnip',
         version = '2.*',
         build = (function()
-          -- Build Step is needed for regex support in snippets.
-          -- This step is not supported in many windows environments.
-          -- Remove the below condition to re-enable on windows.
+          -- スニペットでの正規表現サポートにはビルドステップが必要です。
+          -- このステップは多くの Windows 環境ではサポートされていません。
+          -- Windows で再度有効にするには、以下の条件を削除してください。
           if vim.fn.has 'win32' == 1 or vim.fn.executable 'make' == 0 then
             return
           end
           return 'make install_jsregexp'
         end)(),
         dependencies = {
-          -- `friendly-snippets` contains a variety of premade snippets.
-          --    See the README about individual language/framework/plugin snippets:
+          -- `friendly-snippets` には、さまざまな既製スニペットが含まれています。
+          --    個々の言語/フレームワーク/プラグインのスニペットについては README を参照してください:
           --    https://github.com/rafamadriz/friendly-snippets
           -- {
           --   'rafamadriz/friendly-snippets',
@@ -814,42 +814,42 @@ require('lazy').setup({
     --- @type blink.cmp.Config
     opts = {
       keymap = {
-        -- 'default' (recommended) for mappings similar to built-in completions
-        --   <c-y> to accept ([y]es) the completion.
-        --    This will auto-import if your LSP supports it.
-        --    This will expand snippets if the LSP sent a snippet.
-        -- 'super-tab' for tab to accept
-        -- 'enter' for enter to accept
-        -- 'none' for no mappings
+        -- 組み込みの補完と同様のマッピングには 'default' (推奨)
+        --   <c-y> で補完を受け入れ ([y]es) ます。
+        --    LSP がサポートしている場合、自動インポートされます。
+        --    LSP がスニペットを送信した場合、スニペットが展開されます。
+        -- タブで受け入れるには 'super-tab'
+        -- エンターで受け入れるには 'enter'
+        -- マッピングなしには 'none'
         --
-        -- For an understanding of why the 'default' preset is recommended,
-        -- you will need to read `:help ins-completion`
+        -- なぜ 'default' プリセットが推奨されるのかを理解するには、
+        -- `:help ins-completion` を読む必要があります。
         --
-        -- No, but seriously. Please read `:help ins-completion`, it is really good!
+        -- いや、本当に。`:help ins-completion` を読んでください、本当に良いですよ！
         --
-        -- All presets have the following mappings:
-        -- <tab>/<s-tab>: move to right/left of your snippet expansion
-        -- <c-space>: Open menu or open docs if already open
-        -- <c-n>/<c-p> or <up>/<down>: Select next/previous item
-        -- <c-e>: Hide menu
-        -- <c-k>: Toggle signature help
+        -- すべてのプリセットには以下のマッピングがあります:
+        -- <tab>/<s-tab>: スニペット展開の右/左に移動
+        -- <c-space>: メニューを開く、またはすでに開いている場合はドキュメントを開く
+        -- <c-n>/<c-p> または <up>/<down>: 次/前の項目を選択
+        -- <c-e>: メニューを隠す
+        -- <c-k>: シグネチャヘルプの切り替え
         --
-        -- See :h blink-cmp-config-keymap for defining your own keymap
+        -- 独自のキーマップを定義するには :h blink-cmp-config-keymap を参照
         preset = 'default',
 
-        -- For more advanced Luasnip keymaps (e.g. selecting choice nodes, expansion) see:
+        -- より高度な Luasnip キーマップ（選択ノードの選択、展開など）については、以下を参照してください:
         --    https://github.com/L3MON4D3/LuaSnip?tab=readme-ov-file#keymaps
       },
 
       appearance = {
-        -- 'mono' (default) for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
-        -- Adjusts spacing to ensure icons are aligned
+        -- 'Nerd Font Mono' の場合は 'mono' (デフォルト)、'Nerd Font' の場合は 'normal'
+        -- アイコンが整列するように間隔を調整します
         nerd_font_variant = 'mono',
       },
 
       completion = {
-        -- By default, you may press `<c-space>` to show the documentation.
-        -- Optionally, set `auto_show = true` to show the documentation after a delay.
+        -- デフォルトでは、`<c-space>` を押してドキュメントを表示できます。
+        -- オプションで、`auto_show = true` に設定すると、遅延後にドキュメントを表示できます。
         documentation = { auto_show = false, auto_show_delay_ms = 500 },
       },
 
@@ -862,138 +862,138 @@ require('lazy').setup({
 
       snippets = { preset = 'luasnip' },
 
-      -- Blink.cmp includes an optional, recommended rust fuzzy matcher,
-      -- which automatically downloads a prebuilt binary when enabled.
+      -- Blink.cmp には、オプションの推奨 Rust ファジーマッチャーが含まれており、
+      -- 有効にするとビルド済みのバイナリが自動的にダウンロードされます。
       --
-      -- By default, we use the Lua implementation instead, but you may enable
-      -- the rust implementation via `'prefer_rust_with_warning'`
+      -- デフォルトでは代わりに Lua 実装を使用しますが、
+      -- `'prefer_rust_with_warning'` を介して Rust 実装を有効にすることができます
       --
-      -- See :h blink-cmp-config-fuzzy for more information
+      -- 詳細については :h blink-cmp-config-fuzzy を参照してください
       fuzzy = { implementation = 'lua' },
 
-      -- Shows a signature help window while you type arguments for a function
+      -- 関数の引数を入力中にシグネチャヘルプウィンドウを表示します
       signature = { enabled = true },
     },
   },
 
-  { -- You can easily change to a different colorscheme.
-    -- Change the name of the colorscheme plugin below, and then
-    -- change the command in the config to whatever the name of that colorscheme is.
+  { -- カラースキームは簡単に変更できます。
+    -- 以下のカラースキームプラグインの名前を変更し、
+    -- 設定内のコマンドをそのカラースキームの名前に変更してください。
     --
-    -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
+    -- すでにインストールされているカラースキームを確認するには、`:Telescope colorscheme` を使用できます。
     'folke/tokyonight.nvim',
-    priority = 1000, -- Make sure to load this before all the other start plugins.
+    priority = 1000, -- 他のすべての開始プラグインの前にこれを読み込むようにしてください。
     config = function()
       ---@diagnostic disable-next-line: missing-fields
       require('tokyonight').setup {
         styles = {
-          comments = { italic = false }, -- Disable italics in comments
+          comments = { italic = false }, -- コメントのイタリック体を無効にする
         },
       }
 
-      -- Load the colorscheme here.
-      -- Like many other themes, this one has different styles, and you could load
-      -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
+      -- ここでカラースキームを読み込みます。
+      -- 他の多くのテーマと同様に、これにもさまざまなスタイルがあり、
+      -- 'tokyonight-storm'、'tokyonight-moon'、'tokyonight-day' などを読み込むことができます。
       vim.cmd.colorscheme 'tokyonight-night'
     end,
   },
 
-  -- Highlight todo, notes, etc in comments
+  -- コメント内の todo、notes などをハイライト
   { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
-  { -- Collection of various small independent plugins/modules
+  { -- さまざまな小さな独立したプラグイン/モジュールのコレクション
     'echasnovski/mini.nvim',
     config = function()
-      -- Better Around/Inside textobjects
+      -- より良い Around/Inside テキストオブジェクト
       --
-      -- Examples:
-      --  - va)  - [V]isually select [A]round [)]paren
-      --  - yinq - [Y]ank [I]nside [N]ext [Q]uote
-      --  - ci'  - [C]hange [I]nside [']quote
+      -- 例:
+      --  - va)  - [)]括弧の [A]round（周囲）を [V]isually（視覚的に）選択
+      --  - yinq - [N]ext（次の）[Q]uote（引用符）の [I]nside（内側）を [Y]ank（ヤンク）
+      --  - ci'  - [']引用符の [I]nside（内側）を [C]hange（変更）
       require('mini.ai').setup { n_lines = 500 }
 
-      -- Add/delete/replace surroundings (brackets, quotes, etc.)
+      -- 囲み（括弧、引用符など）の追加/削除/置換
       --
-      -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
-      -- - sd'   - [S]urround [D]elete [']quotes
-      -- - sr)'  - [S]urround [R]eplace [)] [']
+      -- - saiw) - [I]nner [W]ord（単語の内側）に [)]括弧の [S]urround（囲み）を [A]dd（追加）
+      -- - sd'   - [']引用符の [S]urround（囲み）を [D]elete（削除）
+      -- - sr)'  - [)] を ['] に [S]urround [R]eplace（囲み置換）
       require('mini.surround').setup()
 
-      -- Simple and easy statusline.
-      --  You could remove this setup call if you don't like it,
-      --  and try some other statusline plugin
+      -- シンプルで簡単なステータスライン。
+      --  気に入らない場合はこの設定呼び出しを削除して、
+      --  他のステータスラインプラグインを試すことができます
       local statusline = require 'mini.statusline'
-      -- set use_icons to true if you have a Nerd Font
+      -- Nerd Font を持っている場合は use_icons を true に設定
       statusline.setup { use_icons = vim.g.have_nerd_font }
 
-      -- You can configure sections in the statusline by overriding their
-      -- default behavior. For example, here we set the section for
-      -- cursor location to LINE:COLUMN
+      -- デフォルトの動作を上書きすることで、ステータスラインのセクションを設定できます。
+      -- たとえば、ここではカーソル位置のセクションを
+      -- LINE:COLUMN に設定しています
       ---@diagnostic disable-next-line: duplicate-set-field
       statusline.section_location = function()
         return '%2l:%-2v'
       end
 
-      -- ... and there is more!
-      --  Check out: https://github.com/echasnovski/mini.nvim
+      -- ... 他にもあります！
+      --  https://github.com/echasnovski/mini.nvim をチェックしてください
     end,
   },
-  { -- Highlight, edit, and navigate code
+  { -- コードのハイライト、編集、ナビゲーション
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
-    -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
+    -- [[ Treesitter の設定 ]] `:help nvim-treesitter` を参照
     opts = {
       ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'query', 'vim', 'vimdoc' },
-      -- Autoinstall languages that are not installed
+      -- インストールされていない言語を自動インストール
       auto_install = true,
       highlight = {
         enable = true,
-        -- Some languages depend on vim's regex highlighting system (such as Ruby) for indent rules.
-        --  If you are experiencing weird indenting issues, add the language to
-        --  the list of additional_vim_regex_highlighting and disabled languages for indent.
+        -- 一部の言語（Ruby など）は、インデントルールに vim の正規表現ハイライトシステムに依存しています。
+        --  奇妙なインデントの問題が発生している場合は、その言語を
+        --  additional_vim_regex_highlighting のリストと、インデントの無効化言語リストに追加してください。
         additional_vim_regex_highlighting = { 'ruby' },
       },
       indent = { enable = true, disable = { 'ruby' } },
     },
-    -- There are additional nvim-treesitter modules that you can use to interact
-    -- with nvim-treesitter. You should go explore a few and see what interests you:
+    -- nvim-treesitter と対話するために使用できる追加の nvim-treesitter モジュールがあります。
+    -- いくつか探索して、興味のあるものを確認してください:
     --
-    --    - Incremental selection: Included, see `:help nvim-treesitter-incremental-selection-mod`
+    --    - インクリメンタル選択: 含まれています。`:help nvim-treesitter-incremental-selection-mod` を参照
     --    - Show your current context: https://github.com/nvim-treesitter/nvim-treesitter-context
     --    - Treesitter + textobjects: https://github.com/nvim-treesitter/nvim-treesitter-textobjects
   },
 
-  -- The following comments only work if you have downloaded the kickstart repo, not just copy pasted the
-  -- init.lua. If you want these files, they are in the repository, so you can just download them and
-  -- place them in the correct locations.
+  -- 以下のコメントは、init.lua をコピー＆ペーストしただけでなく、kickstart リポジトリをダウンロードした場合にのみ機能します。
+  -- これらのファイルが必要な場合は、リポジトリにあるので、ダウンロードして
+  -- 正しい場所に配置してください。
 
-  -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for Kickstart
+  -- 注意: Neovim の旅の次のステップ: Kickstart に追加のプラグインを追加/設定する
   --
-  --  Here are some example plugins that I've included in the Kickstart repository.
-  --  Uncomment any of the lines below to enable them (you will need to restart nvim).
+  --  Kickstart リポジトリに含まれているプラグインの例をいくつか紹介します。
+  --  以下の行のコメントを外して有効にしてください（nvim の再起動が必要です）。
   --
   -- require 'kickstart.plugins.debug',
   -- require 'kickstart.plugins.indent_line',
   -- require 'kickstart.plugins.lint',
   -- require 'kickstart.plugins.autopairs',
   -- require 'kickstart.plugins.neo-tree',
-  -- require 'kickstart.plugins.gitsigns', -- adds gitsigns recommend keymaps
+  -- require 'kickstart.plugins.gitsigns', -- gitsigns 推奨のキーマップを追加
 
-  -- NOTE: The import below can automatically add your own plugins, configuration, etc from `lua/custom/plugins/*.lua`
-  --    This is the easiest way to modularize your config.
+  -- 注意: 以下のインポートは、`lua/custom/plugins/*.lua` から独自のプラグイン、設定などを自動的に追加できます。
+  --    これは設定をモジュール化する最も簡単な方法です。
   --
-  --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
+  --  以下の行のコメントを外し、`lua/custom/plugins/*.lua` にプラグインを追加して始めてください。
   -- { import = 'custom.plugins' },
   --
-  -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
-  -- Or use telescope!
-  -- In normal mode type `<space>sh` then write `lazy.nvim-plugin`
-  -- you can continue same window with `<space>sr` which resumes last telescope search
+  -- 読み込み、ソース、例に関する追加情報については、`:help lazy.nvim-🔌-plugin-spec` を参照してください
+  -- または Telescope を使用してください！
+  -- ノーマルモードで `<space>sh` と入力し、`lazy.nvim-plugin` と書いてください
+  -- `<space>sr` で同じウィンドウを継続でき、最後の telescope 検索を再開します
 }, {
   ui = {
-    -- If you are using a Nerd Font: set icons to an empty table which will use the
-    -- default lazy.nvim defined Nerd Font icons, otherwise define a unicode icons table
+    -- Nerd Font を使用している場合: icons を空のテーブルに設定すると、
+    -- デフォルトの lazy.nvim 定義の Nerd Font アイコンが使用されます。それ以外の場合は Unicode アイコンテーブルを定義します
     icons = vim.g.have_nerd_font and {} or {
       cmd = '⌘',
       config = '🛠',
@@ -1012,5 +1012,5 @@ require('lazy').setup({
   },
 })
 
--- The line beneath this is called `modeline`. See `:help modeline`
+-- この下の行は `modeline` と呼ばれます。`:help modeline` を参照してください
 -- vim: ts=2 sts=2 sw=2 et

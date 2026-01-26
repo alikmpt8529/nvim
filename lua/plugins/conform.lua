@@ -20,7 +20,8 @@ return {
         -- "format_on_save lsp_fallback" を無効にします。
         -- ここに追加の言語を追加したり、無効になっている言語を再度有効にしたりできます。
         local disable_filetypes = { c = true, cpp = true }
-        if disable_filetypes[vim.bo[bufnr].filetype] then
+        local filetype = vim.api.nvim_buf_get_option(bufnr, 'filetype')
+        if disable_filetypes[filetype] then
           return nil
         else
           return {

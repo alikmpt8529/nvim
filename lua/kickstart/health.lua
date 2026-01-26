@@ -21,13 +21,19 @@ end
 
 local check_external_reqs = function()
   -- Basic utils: `git`, `make`, `unzip`
-  for _, exe in ipairs { 'git', 'make', 'unzip', 'rg' } do
+  -- `rg` (ripgrep) はオプションなので、見つからない場合は警告を出さない
+  for _, exe in ipairs { 'git', 'make', 'unzip' } do
     local is_executable = vim.fn.executable(exe) == 1
     if is_executable then
       vim.health.ok(string.format("Found executable: '%s'", exe))
     else
       vim.health.warn(string.format("Could not find executable: '%s'", exe))
     end
+  end
+
+  -- `rg` (ripgrep) はオプション - 見つかった場合のみ報告
+  if vim.fn.executable('rg') == 1 then
+    vim.health.ok("Found executable: 'rg'")
   end
 
   return true

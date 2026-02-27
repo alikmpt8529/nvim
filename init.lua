@@ -281,5 +281,21 @@ rtp:prepend(lazypath)
 -- 注意: ここでプラグインをインストールします。
 require("lazy").setup("plugins") -- lua/plugins フォルダ内のファイルを自動で読み込む
 
+-- [[ Wezterm と同じ背景を適用 ]]
+-- 背景色 #000000 で Wezterm と統一（Wezterm 内で nvim を起動したとき同じ見た目に）
+vim.api.nvim_create_autocmd("ColorScheme", {
+  group = vim.api.nvim_create_augroup("wezterm-background", { clear = true }),
+  callback = function()
+    vim.api.nvim_set_hl(0, "Normal", { bg = "#000000" })
+    vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#000000" })
+    vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#000000", fg = "#3b4261" })
+  end,
+})
+vim.defer_fn(function()
+  vim.api.nvim_set_hl(0, "Normal", { bg = "#000000" })
+  vim.api.nvim_set_hl(0, "NormalFloat", { bg = "#000000" })
+  vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#000000", fg = "#3b4261" })
+end, 0)
+
 -- この下の行は `modeline` と呼ばれます。`:help modeline` を参照してください
 -- vim: ts=2 sts=2 sw=2 et

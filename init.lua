@@ -156,6 +156,12 @@ vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 -- 入力中に置換をライブプレビュー！
 vim.o.inccommand = 'split'
 
+-- インデント（modeline の代わりにここで設定）
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.softtabstop = 2
+vim.o.expandtab = true
+
 -- カーソルがある行を表示
 vim.o.cursorline = true
 
@@ -297,5 +303,4 @@ vim.defer_fn(function()
   vim.api.nvim_set_hl(0, "FloatBorder", { bg = "#000000", fg = "#3b4261" })
 end, 0)
 
--- この下の行は `modeline` と呼ばれます。`:help modeline` を参照してください
--- vim: ts=2 sts=2 sw=2 et
+-- インデント設定は上記の vim.o.tabstop / shiftwidth / softtabstop / expandtab で行っています

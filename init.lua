@@ -85,14 +85,19 @@ Kickstart のインストール中にエラーが発生した場合は、`:check
 追伸: 完了したらこれも削除して構いません。これはもうあなたの設定ですから！ :)
 --]]
 
--- ; (セミコロン) をリーダーキーに設定
+-- , (カンマ) をリーダーキーに設定
 -- `:help mapleader` を参照
 --  注意: プラグインが読み込まれる前に設定する必要があります（そうしないと間違ったリーダーが使用されます）
-vim.g.mapleader = ';'
-vim.g.maplocalleader = ';'
+vim.g.mapleader = ','
+vim.g.maplocalleader = ','
 
 -- Nerd Font をインストールし、ターミナルで選択している場合は true に設定してください
 vim.g.have_nerd_font = false
+
+-- 日本語化（メッセージ言語とヘルプの優先言語）
+-- `:help 'lang'` および `:help 'helplang'` を参照
+vim.cmd.language('ja_JP.UTF-8')
+vim.opt.helplang = { 'ja', 'en' }
 
 -- [[ オプションの設定 ]]
 -- `:help vim.o` を参照
@@ -236,9 +241,9 @@ vim.keymap.set('n', '<leader>tt', '<cmd>vsplit | terminal<CR>', { desc = '[T]erm
 --  下側にターミナルを開く（水平分割）
 vim.keymap.set('n', '<leader>tT', '<cmd>split | terminal<CR>', { desc = '[T]erminal (bottom split)' })
 --  右側にGemini CLIを開く
-vim.keymap.set('n', '<leader>tg', '<cmd>vsplit | terminal gemini<CR>', { desc = '[T]erminal [G]emini CLI' })
---  右側にCursor CLIを開く
-vim.keymap.set('n', '<leader>tu', '<cmd>vsplit | terminal cursor-agent<CR>', { desc = '[T]erminal c[U]rsor agent' })
+vim.keymap.set('n', '<leader>mi', '<cmd>vsplit | terminal gemini<CR>', { desc = '[G]emini CLI' })
+--  右側にCursor Agentを開く
+vim.keymap.set('n', '<leader>cu', '<cmd>vsplit | terminal agent<CR>', { desc = '[C]ursor Agent' })
 
 -- 注意: 一部のターミナルではキーマップが衝突したり、異なるキーコードを送信できなかったりします
 -- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })

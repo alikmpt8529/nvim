@@ -58,7 +58,7 @@ Neovim の設定フォルダは OS により次のパスです：
 #### 推奨手順
 
 このリポジトリを [Fork](https://docs.github.com/ja/get-started/quickstart/fork-a-repo) して、
-自分用に編集できるようにしてから、下のいずれかのコマンドでクローンします。
+
 
 > [!NOTE]
 > Fork 先の URL は次のような形になります：  
@@ -246,3 +246,4 @@ sudo dnf install -y gcc make git ripgrep fd-find unzip neovim
 sudo pacman -S --noconfirm --needed gcc make git ripgrep fd unzip neovim
 ```
 </details>
+

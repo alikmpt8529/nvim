@@ -68,9 +68,30 @@ vim.keymap.set('n', '<leader>mi', '<cmd>vsplit | terminal gemini<CR>', { desc = 
 vim.keymap.set('n', '<leader>cu', '<cmd>vsplit | terminal agent<CR>', { desc = '[C]ursor Agent' })
 --  右側にClaude Codeを開く
 vim.keymap.set('n', '<leader>cc', '<cmd>vsplit | terminal claude<CR>', { desc = '[C]laude [C]ode' })
+--  ターミナルを閉じる（実行中のジョブごとバッファを削除）
+--  現在のバッファがターミナルの場合のみ削除（誤操作防止）し、
+--  ターミナルモードのままでも（ノーマルモードに戻さず）実行できるようにする
+local function close_terminal()
+  if vim.bo.buftype == 'terminal' then
+    vim.cmd 'bdelete!'
+  end
+end
+vim.keymap.set('n', '<leader>tq', close_terminal, { desc = '[T]erminal [Q]uit (close)' })
+vim.keymap.set('t', '<leader>tq', function()
+  vim.cmd 'stopinsert'
+  close_terminal()
+end, { desc = '[T]erminal [Q]uit (close)' })
 
 -- 注意: 一部のターミナルではキーマップが衝突したり、異なるキーコードを送信できなかったりします
 -- vim.keymap.set("n", "<C-S-h>", "<C-w>H", { desc = "Move window to the left" })
 -- vim.keymap.set("n", "<C-S-l>", "<C-w>L", { desc = "Move window to the right" })
 -- vim.keymap.set("n", "<C-S-j>", "<C-w>J", { desc = "Move window to the lower" })
 -- vim.keymap.set("n", "<C-S-k>", "<C-w>K", { desc = "Move window to the upper" })
+
+-- 元に戻す/やり直しのキーマップ（一般的なエディタに合わせて Ctrl+Z / Ctrl+Y を使用）
+--  デフォルトでは u / <C-r> だが、Ctrl+Z（元に戻す）と Ctrl+Y（やり直し）でも操作できるようにする
+--  注意: 一部のターミナルでは <C-z> がジョブのサスペンド（バックグラウンド化）に使われるため反応しないことがあります
+vim.keymap.set('n', '<C-z>', 'u', { desc = 'Undo' })
+vim.keymap.set('n', '<C-y>', '<C-r>', { desc = 'Redo' })
+vim.keymap.set('i', '<C-z>', '<C-o>u', { desc = 'Undo' })
+vim.keymap.set('i', '<C-y>', '<C-o><C-r>', { desc = 'Redo' })

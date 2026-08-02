@@ -18,6 +18,20 @@ return {
       -- 他の多くのテーマと同様に、これにもさまざまなスタイルがあり、
       -- 'tokyonight-storm'、'tokyonight-moon'、'tokyonight-day' などを読み込むことができます。
       vim.cmd.colorscheme 'tokyonight-night'
+
+      -- [[ Wezterm と同じ背景を適用 ]]
+      -- 背景色 #000000 で Wezterm と統一（Wezterm 内で nvim を起動したとき同じ見た目に）
+      local function apply_wezterm_background()
+        vim.api.nvim_set_hl(0, 'Normal', { bg = '#000000' })
+        vim.api.nvim_set_hl(0, 'NormalFloat', { bg = '#000000' })
+        vim.api.nvim_set_hl(0, 'FloatBorder', { bg = '#000000', fg = '#3b4261' })
+      end
+
+      vim.api.nvim_create_autocmd('ColorScheme', {
+        group = vim.api.nvim_create_augroup('wezterm-background', { clear = true }),
+        callback = apply_wezterm_background,
+      })
+      apply_wezterm_background()
     end,
   },
 }

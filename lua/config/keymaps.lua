@@ -95,3 +95,6 @@ vim.keymap.set('n', '<C-z>', 'u', { desc = 'Undo' })
 vim.keymap.set('n', '<C-y>', '<C-r>', { desc = 'Redo' })
 vim.keymap.set('i', '<C-z>', '<C-o>u', { desc = 'Undo' })
 vim.keymap.set('i', '<C-y>', '<C-o><C-r>', { desc = 'Redo' })
+
+-- Markdown プレビュー（render-markdown.nvim）のトグル
+vim.keymap.set('n', '<leader>mp', '<cmd>RenderMarkdown toggle<CR>', { desc = '[M]arkdown [P]review toggle' })

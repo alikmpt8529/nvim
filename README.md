@@ -1,7 +1,12 @@
 # kickstart.nvim
 
 > この設定は [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)（[nvim-lua](https://github.com/nvim-lua) 作）をベースにした Neovim 設定です。  
-> ライセンス: [MIT License](LICENSE.md)
+> ライセンス: [MIT License](LICENSE.md)  
+> 注意: 依存プラグインの大半は MIT / Apache-2.0 ですが、
+> [gitgraph.nvim](https://github.com/isakbm/gitgraph.nvim) が依存する
+> [diffview.nvim](https://github.com/sindrets/diffview.nvim) のみ GPLv3 です
+> （本リポジトリはプラグインのコードを同梱せず lazy.nvim 経由で参照するのみのため、
+> この設定自体のライセンスには影響しません）。
 
 ## はじめに
 

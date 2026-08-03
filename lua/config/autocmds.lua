@@ -1,5 +1,3 @@
----@diagnostic disable: undefined-global
-
 -- [[ 基本的な自動コマンド ]]
 --  `:help lua-guide-autocommands` を参照
 

@@ -1,5 +1,3 @@
----@diagnostic disable: undefined-global
-
 -- [[ オプションの設定 ]]
 -- `:help vim.o` を参照
 -- 注意: これらのオプションは自由に変更できます！

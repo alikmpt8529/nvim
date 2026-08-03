@@ -51,6 +51,8 @@ return {
         { '<leader>g', group = '[G]it' },
         { '<leader>w', group = '[W]indow' },
         { '<leader>e', group = '[E]xplorer' },
+        { '<leader>m', group = '[M]arkdown / Gemini' },
+        { '<leader>c', group = '[C]LI Agent' },
       },
     },
   },

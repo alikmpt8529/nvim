@@ -1,5 +1,3 @@
----@diagnostic disable: undefined-global
-
 -- [[ 基本的なキーマップ ]]
 --  `:help vim.keymap.set()` を参照
 
@@ -63,7 +61,7 @@ vim.keymap.set('n', '<leader>tt', '<cmd>vsplit | terminal<CR>', { desc = '[T]erm
 --  下側にターミナルを開く（水平分割）
 vim.keymap.set('n', '<leader>tT', '<cmd>split | terminal<CR>', { desc = '[T]erminal (bottom split)' })
 --  右側にGemini CLIを開く
-vim.keymap.set('n', '<leader>mi', '<cmd>vsplit | terminal gemini<CR>', { desc = '[G]emini CLI' })
+vim.keymap.set('n', '<leader>mi', '<cmd>vsplit | terminal gemini<CR>', { desc = 'Gemini CLI' })
 --  右側にCursor Agentを開く
 vim.keymap.set('n', '<leader>cu', '<cmd>vsplit | terminal agent<CR>', { desc = '[C]ursor Agent' })
 --  右側にClaude Codeを開く
